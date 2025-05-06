@@ -34,7 +34,7 @@ public static class Program {
 			await cmd.ExecuteNonQueryAsync();
 
 			cmd.CommandText = "SELECT Data FROM dbo.TestVarBinary";
-///			cmd.Parameters.Clear();
+			cmd.Parameters.Clear();
 			var result = (byte[])await cmd.ExecuteScalarAsync();
 			if (result.SequenceEqual(data)) {
 				Console.WriteLine("Data matches.");
